@@ -11,7 +11,6 @@ First, add `flutter_navigation` as a dependency in your pubspec.yaml file.
 ## Example
 
 ```dart
-
     import "package:flutter_navigation/navigation.dart";
     import 'some_widget_1.dart'
     import 'some_widget_2.dart'
@@ -38,11 +37,11 @@ void main(){
             },
             navigationType: FlutterNavigationTypes.IOS,
             initialRoute:"Home",
-            onPush: (route, page, rest) {
-                print("onPush ${rest.settings.name}");
+            onPush: (params) {
+                print("onPush ${params}");
             },
-            onPop: (route, page, rest) {
-                print("onPop ${rest.settings.name}");
+            onPop: (params) {
+                print("onPop ${params}");
             },
     ))
 }
@@ -69,5 +68,4 @@ class SomeWidgetWithState extends State<Home> {
     ]);
   }
 }
-
 ```
